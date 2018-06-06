@@ -1,0 +1,17 @@
+<apex:page controller="ctlDepPickLst">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >                            
+           Countries: <apex:selectList size="1" value="{!country}">
+                       <apex:selectOptions value="{!countries}"/>
+                       <apex:actionSupport event="onchange" reRender="a"/>
+                       </apex:selectList>                                           
+                
+            States: <apex:selectList size="1" value="{!state}" id="a">
+                    <apex:selectOptions value="{!states}"/>
+                    </apex:selectList>
+                                
+            </apex:pageBlockSection>        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

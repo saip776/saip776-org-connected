@@ -1,0 +1,44 @@
+<apex:page controller="searchAll">
+   <apex:form >
+    <apex:pageBlock >
+        
+    <apex:inputText value="{!search}" title="Search"/>
+        <apex:commandButton value="Search" action="{!account}"/>
+    <apex:pageBlockSection title="Accounts">
+        <apex:pageBlockTable value="{!acc}" var="a" title="Accounts">
+                <apex:column value="{!a.name}">
+                        <!--apex:actionSupport action="{!querycontacts}" event="onmouseover"/-->
+                    </apex:column>
+            <apex:column value="{!a.Type}"/>
+                <apex:column value="{!a.Phone}"/>
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contacts">
+            <apex:pageBlockTable value="{!con}" var="c" >
+                <apex:column value="{!c.name}"/>
+            <apex:column value="{!c.Email}"/>
+                <apex:column value="{!c.Phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+              <apex:pageBlockSection title="Leads">
+            <apex:pageBlockTable value="{!lead}" var="l" >
+                <apex:column value="{!l.name}"/>
+            <apex:column value="{!l.company}"/>
+                <apex:column value="{!l.Phone}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+             <apex:pageBlockSection title="Opportunities">
+            <apex:pageBlockTable value="{!opp}" var="o" >
+                <apex:column value="{!o.name}"/>
+            <apex:column value="{!o.stageName}"/>
+                <apex:column value="{!o.amount}"/>
+                    <apex:column value="{!o.type}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+            <!--apex:pageBlockSection title="{!a.name}">
+        <apex:relatedList list="contacts" subject="{!a.Id}"/>
+                <apex:relatedList list="leads" subject="{!a.Id}"/>
+            </apex:pageBlockSection-->
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

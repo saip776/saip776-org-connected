@@ -1,0 +1,25 @@
+<apex:page controller="BSL1Controller">
+    <apex:form >
+    Stage Name : <apex:selectList id="List" value="{!selectedvalue}" size="1">
+        <apex:selectOptions value="{!selectOptions}"/>
+        <apex:actionSupport action="{!oppList}" event="onchange" reRender="panel1"/>
+    </apex:selectList>
+        
+        <apex:pageBlock id="panel1">
+        <apex:pageBlockTable value="{!Opps}" var="o">
+            <apex:column headerValue="Name">
+                <apex:commandLink value="{!o.Name}" reRender="panel2">
+                <apex:param name="p1" value="{!o.ID}"/>
+                </apex:commandLink>
+            </apex:column>
+            <apex:column value="{!o.Account.Name}" />
+            <apex:column value="{!o.type}" />
+            <apex:column value="{!o.CloseDate}" />
+            <apex:column value="{!o.ExpectedRevenue}" />
+            </apex:pageBlockTable>
+             </apex:pageBlock>
+            <apex:pageBlock title="Details" id="panel2">
+                <apex:detail subject="{!$CurrentPage.Parameters.p1}" relatedList="false" />            
+            </apex:pageBlock>
+        </apex:form>
+</apex:page>

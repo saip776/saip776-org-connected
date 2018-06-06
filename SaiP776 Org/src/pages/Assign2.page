@@ -1,0 +1,18 @@
+<apex:page controller="Assign2">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                 <apex:inputCheckbox label="Won"  value="{!won}"/>
+                 <apex:inputCheckbox label="Lost" value="{!lost}"/>
+                 <apex:inputCheckbox label="Open" value="{!open}"/>
+                 <apex:commandButton value="Click Here" action="{!abc}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!opty}" var="o">
+                 <apex:column value="{!o.name}"/>
+                 <apex:column value="{!o.type}"/>
+                 <apex:column value="{!o.stagename}"/>
+                 <apex:column value="{!o.Amount}" />
+            </apex:pageBlockTable>
+         </apex:pageBlock>
+     </apex:form>
+</apex:page>

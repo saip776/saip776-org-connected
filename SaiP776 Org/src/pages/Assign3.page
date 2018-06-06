@@ -1,0 +1,21 @@
+<apex:page controller="Assign3">
+ <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+          <apex:selectRadio value="{!pick}">
+              <apex:selectOption itemLabel="Contacts with Email" itemValue="cwe" />
+              <apex:selectOption itemLabel="Contacts without Email" itemValue="cwoe" />
+              <apex:selectOption itemLabel="All Contacts"  itemValue="con"/>
+              <apex:actionSupport event="onchange" action="{!tod}" reRender="records" />
+            </apex:selectRadio>
+        </apex:pageBlockSection>
+        <apex:outputPanel id="records">
+          <apex:pageBlockTable value="{!con}" var="c">
+            <apex:column value="{!c.firstname}"/>
+            <apex:column value="{!c.lastname}"/>
+            <apex:column value="{!c.email}"/>
+          </apex:pageBlockTable>
+            </apex:outputPanel>
+    </apex:pageBlock>
+     </apex:form>
+</apex:page>

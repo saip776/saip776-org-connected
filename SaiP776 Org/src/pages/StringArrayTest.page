@@ -1,0 +1,8 @@
+<apex:page controller="StringArrayTest">
+    <apex:form >
+        <apex:repeat >
+    StringArrayTest.generateStringArray(5);
+            return myArray;
+        </apex:repeat>
+        </apex:form>
+</apex:page>

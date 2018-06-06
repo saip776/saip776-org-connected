@@ -1,0 +1,18 @@
+<apex:page controller="TestCodeController">
+  <apex:form > 
+      <b>Select Stage Name : </b> <apex:SelectList id="List" value="{!selectedVal}" size="1">
+                    <apex:actionSupport action="{!oppList}" event="onchange"
+                       reRender="pb"/>
+                    <apex:selectOptions value="{!selectOptions}" />
+                 </apex:SelectList>
+
+           <apex:pageBlock id="pb" >
+          <apex:pageBlockTable value="{!opps}" var="v">
+            <apex:column value="{!v.name}"/>
+            <apex:column value="{!v.type}"/>
+            <apex:column value="{!v.CloseDate}"/>
+               <apex:column value="{!v.stagename}"/>
+          </apex:pageBlockTable>
+      </apex:pageBlock>
+</apex:form> 
+</apex:page>

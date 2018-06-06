@@ -1,0 +1,15 @@
+<apex:page standardController="opportunity">
+    <apex:form >
+        <apex:pageBlock title="opportunity by stage">
+            <apex:inputField value="{!opportunity.stagename}" />
+        <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!opportunity}" var="o">
+             <apex:column value="{!o.name}" />
+            <apex:column value="{!o.closedate}" />
+                <apex:column value="{!o.type}" />
+                <apex:column value="{!o.stagename}" />
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

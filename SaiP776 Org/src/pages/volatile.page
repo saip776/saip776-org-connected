@@ -1,0 +1,3 @@
+<apex:page >
+    <!---<apex:outputText value=”{!o.Textfield}” style=”color:{!Case(o.Textfield, ‘closed’, ‘red’, ‘open ‘, ‘green ‘,’Existing’,’grey’,’None’)};”/>---->
+</apex:page>

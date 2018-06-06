@@ -1,0 +1,20 @@
+<apex:page controller="PickStage">
+   <apex:form >
+     <apex:pageBlock >
+     <apex:pageBlockSection >
+            Stage :<apex:selectList value="{!selectedvalue}" size="1" >
+  				   <apex:selectOptions value="{!Stages}"/>
+			       </apex:selectList>
+                   <apex:commandButton value="Click Here" action="{!pickstage}" reRender="records"/>
+        </apex:pageBlockSection>
+            <apex:outputPanel id="records">
+            <apex:pageBlockTable value="{!optys}" var="o">
+                <apex:column value="{!o.name}" />
+                <apex:column value="{!o.type}" />
+                <apex:column value="{!o.closedate}" />
+                <apex:column value="{!o.stagename}" />
+            </apex:pageBlockTable>
+                </apex:outputPanel>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

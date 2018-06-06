@@ -1,0 +1,29 @@
+<apex:page >
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >Name<apex:inputText /></apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >Age:
+                <apex:selectRadio >
+                    <apex:selectOption itemLabel="Male" itemValue="m"/>
+                    <apex:selectOption itemLabel="Female" itemValue="f"/>           
+                </apex:selectRadio>     
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >Skills:
+                <apex:selectcheckboxes layout="pageDirection">
+                    <apex:selectOption itemLabel="C" itemValue="f"/>
+                    <apex:selectOption itemLabel="C++" itemValue="cpp"/>    
+                    <apex:selectOption itemLabel="JAVA" itemValue="j"/>
+                    <apex:selectOption itemLabel="HTML" itemValue="h"/>  
+                    <apex:selectOption itemLabel="JAVASCRIPT" itemValue="js"/>
+                    <apex:selectOption itemLabel="VC++" itemValue="vcpp"/>         
+                </apex:selectcheckboxes>     
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >Active?<apex:inputCheckbox /></apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Store"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>
