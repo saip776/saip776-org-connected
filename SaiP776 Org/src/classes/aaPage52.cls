@@ -6,6 +6,7 @@ public class aaPage52 {
         X = 1;
         X2 = 2;
     }
+    //test 9102019
     public PageReference TestX() {
         String strX = ApexPages.currentPage().getParameters().get('X');
         if (strX != null) {
